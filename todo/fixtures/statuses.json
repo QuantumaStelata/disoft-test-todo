@@ -1,0 +1,23 @@
+[
+    {
+        "model": "todo.TaskStatus",
+        "pk": 1,
+        "fields": {
+            "name": "new"
+        }
+    },
+    {
+        "model": "todo.TaskStatus",
+        "pk": 2,
+        "fields": {
+            "name": "in progress"
+        }
+    },
+    {
+        "model": "todo.TaskStatus",
+        "pk": 3,
+        "fields": {
+            "name": "complited"
+        }
+    }
+]

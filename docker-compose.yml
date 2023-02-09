@@ -1,0 +1,21 @@
+version: '1'
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - 8000:8000
+  db:
+    image: postgres:12.0-alpine
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=admin
+  redis:
+    image: redis:alpine
+  celery:
+    restart: always
+    build:
+      context: .
+    command: celery -A cluster worker -l info
